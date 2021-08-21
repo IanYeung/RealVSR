@@ -30,8 +30,8 @@ def main():
     model_name = '001_EDVR_NoUp_woTSA_scratch_lr1e-4_150k_RealVSR_3frame_WiCutBlur_YCbCr_LapPyr+GW'
     model_path = '../experiments/pretrained_models/{}.pth'.format(model_name)
     # dataset
-    read_folder = '/home/xiyang/Datasets/RealVSR/release_v2/LQ_YCbCr_test'
-    save_folder = '/home/xiyang/Datasets/RealVSR/results/{}/{}'.format(data_mode, model_name)
+    read_folder = '/home/yangxi/datasets/RealVSR/release/LQ_YCbCr_test'
+    save_folder = '/home/yangxi/datasets/RealVSR/results/{}/{}'.format(data_mode, model_name)
     # color mode
     color = 'YCbCr'
     # device
