@@ -1,13 +1,11 @@
 # Dataset and Code for RealVSR
 
----
 >[Real-world Video Super-resolution: A Benchmark Dataset and A Decomposition based Learning Scheme](https://www4.comp.polyu.edu.hk/~cslzhang/paper/ICCV21_RealVSR.pdf) \
 >Xi Yang, Wangmeng Xiang, Hui Zeng and Lei Zhang \
 >International Conference on Computer Vision, 2021.
 
 ## Dataset
 
----
 The dataset is hosted on [Google Drive](https://drive.google.com/drive/folders/1-8MvMEYMOeOE713DjI7TJKyRE-LnrM3Y?usp=sharing) and [Baidu Drive](https://pan.baidu.com/s/1rBIGo5xrY2VtpoUF2gf_HA) (code: 43ph). Some example scenes are shown below.
 
 ![dataset_samples](./imgs/dataset_samples.png)
@@ -27,7 +25,6 @@ The structure of the dataset is illustrated below.
 
 ## Code
 
----
 ### Dependencies
 * Linux *(tested on Ubuntu 18.04)*
 * Python 3 *(tested on python 3.7)*
@@ -72,12 +69,10 @@ python test_RealVSR_wo_GT.py
 
 ## License
 
----
 This project is released under the Apache 2.0 license.
 
 ## Citation
 
----
 If you find this code useful in your research, please consider citing:
 ``` latex
 @article{yang2021real,
@@ -90,5 +85,4 @@ If you find this code useful in your research, please consider citing:
 
 ## Acknowledgement
 
----
 This implementation largely depends on [EDVR](https://github.com/xinntao/EDVR). Thanks for the excellent codebase! You may also consider migrating it to [BasicSR](https://github.com/xinntao/BasicSR).
