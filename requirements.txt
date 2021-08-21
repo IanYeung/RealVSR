@@ -1,0 +1,16 @@
+numpy
+opencv-python
+lmdb
+pyyaml
+tensorboard
+future
+matplotlib
+ffmpeg-python
+IQA_pytorch
+ipython
+matplotlib
+scikit-image
+torch
+torchvision
+tqdm
+kornia

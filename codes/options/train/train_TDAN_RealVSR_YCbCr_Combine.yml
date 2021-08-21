@@ -1,0 +1,85 @@
+#### general settings
+name: 001_TDAN_scratch_lr1e-4_150k_RealVSR_3frame_WiCutBlur_YCbCr_CB
+use_tb_logger: true
+model: VideoSR_AllPair_YCbCr_Combine
+distortion: sr
+scale: 1
+gpu_ids: [0,1,2,3]
+
+#### datasets
+datasets:
+  train:
+    name: RealVSR_Train
+    mode: RealVSR_AllPair
+    interval_list: [1]
+    random_reverse: false
+    border_mode: false
+    dataroot_GT: /home/yangxi/datasets/RealVSR/GT_YCbCr
+    dataroot_LQ: /home/yangxi/datasets/RealVSR/LQ_YCbCr
+    cache_keys: ../keys/realvsr_keys.pkl
+    remove_list: ../keys/remove_seqs.pkl
+    N_frames: 3
+    use_shuffle: true
+    n_workers: 3  # per GPU
+    batch_size: 32
+    GT_size: 192
+    LQ_size: 192
+    use_flip: true
+    use_rot: true
+    color: ycbcr
+  val:
+    name: RealVSR_Test
+    mode: VideoTest
+    dataroot_GT: /home/yangxi/datasets/RealVSR/GT_YCbCr_test_10
+    dataroot_LQ: /home/yangxi/datasets/RealVSR/LQ_YCbCr_test_10
+    cache_data: true
+    N_frames: 3
+    padding: new_info
+    color: ycbcr
+
+#### network structures
+network_G:
+  which_model_G: TDAN
+  nf: 64
+  nc: 3
+  nframes: 3
+  nb_f: 5
+  nb_b: 10
+  groups: 8
+
+#### path
+path:
+  pretrain_model_G: ~
+  strict_load: true
+  resume_state: ~
+
+#### training settings: learning rate scheme, loss
+train:
+  lr_G: !!float 1e-4
+  lr_scheme: CosineAnnealingLR_Restart
+  beta1: 0.9
+  beta2: 0.99
+  niter: 150000
+  warmup_iter: -1  # -1: no warm up
+  T_period: [150000, 150000, 150000, 150000]
+  restarts: [150000, 300000, 450000]
+  restart_weights: [1, 1, 1]
+  eta_min: !!float 1e-7
+
+  pixel_criterion: cb
+  pixel_weight: 1.0
+  val_freq: !!float 1e4
+
+  manual_seed: 0
+
+#### logger
+logger:
+  print_freq: 100
+  save_checkpoint_freq: !!float 1e4
+
+#### augment
+augment:
+  augs: ["none", "cutblur"]
+  probs: [1.0, 1.0]
+  mix_p: [0.95, 0.05]
+  alphas: [1.0, 0.7]
