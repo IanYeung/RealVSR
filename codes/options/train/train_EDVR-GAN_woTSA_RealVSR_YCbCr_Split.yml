@@ -1,5 +1,5 @@
 #### general settings
-name: 001_EDVR_NoUp_woTSA_scratch_lr1e-4_150k_RealVSR_3frame_WiCutBlur_YCbCr_LapPyr+GW+EdgeGAN
+name: 001_EDVR_NoUp_woTSA_scratch_lr5e-5_150k_RealVSR_3frame_WiCutBlur_YCbCr_LapPyr+GW+EdgeGAN
 use_tb_logger: true
 model: VideoSRGAN_AllPair_YCbCr_Split
 distortion: sr
