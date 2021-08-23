@@ -67,6 +67,9 @@ Modify the configuration in test_RealVSR_wo_GT.py and run the following command:
 python test_RealVSR_wo_GT.py
 ```
 
+#### Pre-trained Models
+Some pretrained models could be found on [Google Drive](https://drive.google.com/drive/folders/1nMXhsNbTrRUBUX8EEzeD_gqmqoHbcmDz?usp=sharing) and [Baidu Drive](https://pan.baidu.com/s/1zYupxTDBRAyxbzc5fQThwQ) (code: n1n0).
+
 ## License
 
 This project is released under the Apache 2.0 license.
