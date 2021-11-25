@@ -22,6 +22,7 @@ The structure of the dataset is illustrated below.
 | LQ_test.zip              | Low Quality test sequences in RGB format    |
 | GT_YCbCr_test.zip        | Ground truth test sequences in YCbCr format |
 | LQ_YCbCr_test.zip        | Low Quality test sequences in YCbCr format  |
+| videos.zip               | Original videos (> 500 LR-HR pairs here)    |
 
 ## Code
 
